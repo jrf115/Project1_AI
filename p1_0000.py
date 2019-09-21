@@ -7,28 +7,26 @@
 def myreverse(aList):
     if (len(aList) != 0):
         newList = []
-        listLength = len(aList) - 1
-        while listLength >= 0:
-            newList.append(aList[listLength])
-            listLength -= 1
+        listIter = len(aList) - 1
+        while listIter >= 0:
+            newList.append(aList[listIter])
+            listIter -= 1
         return newList
     else:
-        return "[]"
+        return aList
 
-# def mirror:
 
 
 # def flatten:
 
-
 # def int_list:
-
 
 # def invert_dict:
 
 
-# Testing myreversefunction
 print("p1_0000 successfully loaded")
+# Testing myreversefunction
+print("Testing myreversefunction")
 listTest = [1, 4, 6, 34, 2]
 print(myreverse(listTest))
 print(myreverse([[1, 2], [3, [4, 5]]]))
