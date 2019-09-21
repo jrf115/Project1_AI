@@ -23,8 +23,8 @@ def mirror(aList):
         while listIter >= 0:
             if (type(aList[listIter]) is list):   # Need to do a reverse on the inner contents before the oute
                 aList[listIter] = mirror(aList[listIter])
-                newList.append(aList[listIter])
             listIter -= 1
+        newList = myreverse(aList)
         return newList
     else:
         return myreverse(aList)
