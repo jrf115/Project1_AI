@@ -43,7 +43,15 @@ def flatten(aList):
     return doFlat(aList)
 
 
-# def int_list:
+def int_list(filterList):
+    newList = []
+    iter = 0
+    length = len(filterList)
+    while iter < length:
+        if type(filterList[iter]) is int:
+            newList.append(filterList[iter])
+        iter += 1
+    return newList
 
 # def invert_dict:
 
@@ -67,3 +75,8 @@ print("Testing flatten function")
 print(flatten([[1, 2], [3, [4, 5]]]))
 print(flatten([]))
 print(flatten([1, 'a']))
+
+# Testing int_list function
+print("Testing int_list function")
+print(int_list([1, 'a', 2, 'b', [3, 4]]))
+print(int_list(['a', 'b', 'c']))
