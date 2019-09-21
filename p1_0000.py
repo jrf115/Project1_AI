@@ -1,6 +1,7 @@
 ###                                        ###
 # John Fahringer 2019 jrf115@zips.uakron.edu #
 # Project 1 - AI & Heurisitcs Analysis       #
+# Built using Python 3.7
 ###                                        ###
 
 
@@ -29,7 +30,23 @@ def mirror(aList):
     else:
         return myreverse(aList)
 
-# def flatten:
+
+def flatten(aList):
+    def doFlat(flattenList):
+        nonlocal newList
+        iter = 0
+        length = len(flattenList)
+        while iter < length:
+            if type(flattenList[iter]) is list:
+                doFlat(flattenList[iter])
+            else:
+                newList.append(flattenList[iter])
+            iter += 1
+        return newList
+
+    newList = []
+    return doFlat(aList)
+
 
 # def int_list:
 
@@ -49,3 +66,9 @@ print("Testing mirror function")
 print(mirror([[1, 2], [3, [4, 5]]]))
 print(mirror([1, 2, 4, 5]))
 print(mirror([]))
+
+# Testing flatten flatten function
+print("Testing flatten function")
+print(flatten([[1, 2], [3, [4, 5]]]))
+print(flatten([]))
+print(flatten([1, 'a']))
