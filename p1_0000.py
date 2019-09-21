@@ -6,32 +6,27 @@
 
 
 def myreverse(aList):
-    if (len(aList) != 0):
-        newList = []
-        listIter = len(aList) - 1
-        while listIter >= 0:
-            newList.append(aList[listIter])
-            listIter -= 1
-        return newList
-    else:
-        return aList
+    newList = []
+    listIter = len(aList) - 1
+    while listIter >= 0:
+        newList.append(aList[listIter])
+        listIter -= 1
+    return newList
 
 
 def mirror(aList):
-    if (len(aList) != 0):
-        newList = []
-        listIter = len(aList) - 1
-        while listIter >= 0:
-            if (type(aList[listIter]) is list):   # Need to do a reverse on the inner contents before the oute
-                aList[listIter] = mirror(aList[listIter])
-            listIter -= 1
-        newList = myreverse(aList)
-        return newList
-    else:
-        return myreverse(aList)
+    newList = []
+    listIter = len(aList) - 1
+    while listIter >= 0:
+        if (type(aList[listIter]) is list):   # Need to do a reverse on the inner contents before the oute
+            aList[listIter] = mirror(aList[listIter])
+        listIter -= 1
+    newList = myreverse(aList)
+    return newList
 
 
 def flatten(aList):
+
     def doFlat(flattenList):
         nonlocal newList
         iter = 0
