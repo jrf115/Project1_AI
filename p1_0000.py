@@ -53,7 +53,13 @@ def int_list(filterList):
         iter += 1
     return newList
 
-# def invert_dict:
+
+def invert_dict(dictionary):
+    newDict = {}
+    tempDict = {}
+    for x in dictionary:
+        newDict[dictionary[x]] = x
+    return newDict
 
 
 print("p1_0000 successfully loaded")
@@ -80,3 +86,8 @@ print(flatten([1, 'a']))
 print("Testing int_list function")
 print(int_list([1, 'a', 2, 'b', [3, 4]]))
 print(int_list(['a', 'b', 'c']))
+
+# Testing invert_dict
+print("Testing invert_dict")
+d = {1: 'a', 2: 'b'}
+print(invert_dict(d))
